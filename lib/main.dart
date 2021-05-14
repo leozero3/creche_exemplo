@@ -1,4 +1,5 @@
 import 'package:creche_exemplo/pages/home.dart';
+import 'package:creche_exemplo/pages/pages.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: HomePage(),
+      home: Pages(),
     );
   }
 }

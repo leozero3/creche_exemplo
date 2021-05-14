@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 
 final List<String> cards = [
   'Lorem Ipsum is simply dummy text of the printing and typesetting '
@@ -14,6 +14,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Mural da Creche'),
+        centerTitle: true,
+      ),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: ListView.builder(
           padding: EdgeInsets.all(10),
@@ -27,18 +32,21 @@ class HomePage extends StatelessWidget {
   }
 }
 
+
 class Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Padding(
-      padding: const EdgeInsets.only(left:8, right: 8),
+      padding: const EdgeInsets.only(left: 8, right: 8),
       child: Column(
         children: [
           Name(),
-          SizedBox(height: 5),
+          Divider(thickness: 5),
           Conteudo(),
-          Divider(thickness: 5,)
+          // Divider(thickness: 5)
+          Divider(
+            indent: 20,
+          )
         ],
       ),
     );
@@ -48,10 +56,8 @@ class Card extends StatelessWidget {
 class Name extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-      // padding: EdgeInsets.all(10),
       width: double.infinity,
       child: Column(
         children: [
@@ -59,15 +65,16 @@ class Name extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border(
                 left: BorderSide(),
-                bottom: BorderSide(),
+                top: BorderSide(),
+                right: BorderSide(),
               ),
             ),
             child: Row(
               children: [
                 Container(
                     margin: EdgeInsets.all(5),
-                    height: 80,
-                    width: 80,
+                    height: 70,
+                    width: 70,
                     decoration: BoxDecoration(
                       border: Border.all(),
                       borderRadius: BorderRadius.circular(150),
