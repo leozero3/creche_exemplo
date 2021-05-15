@@ -1,3 +1,4 @@
+import 'package:creche_exemplo/pages/conteudo_atividade.dart';
 import 'package:flutter/material.dart';
 
 final imagem = 'https://canaldoensino.com.br/blog/wp-c'
@@ -14,48 +15,87 @@ class Atividades extends StatelessWidget {
           child: Column(
             children: [
               Imagem(),
+              SizedBox(height: 10),
               Nome(),
+              SizedBox(height: 10),
               ListaDiario(),
+              ListaDiario(),
+              ListaDiario(),
+              ListaDiario(),
+              ListaDiario(),
+              ListaDiario(),
+              ListaDiario(),
+              ListaDiario(),
+              SizedBox(height: 10)
             ],
           ),
         ),
       ),
     );
   }
-
-
 }
 
 class ListaDiario extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10),
-
-      height: 100,
+      height: 87,
       width: double.infinity,
-      color: Colors.lightGreen,
-      decoration: BoxDecoration(),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.greenAccent,
+      ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-
-
-
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Data : 12/23/4567',
+                  style: TextStyle(fontSize: 22),
+                ),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ConteudoAtividade()));
+                  },
+                  child: Container(
+                    height: 51,
+                    width: 51,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.arrow_forward_outlined,
+                          size: 50,
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
-
   }
 }
 
-
 Widget Nome() {
-  return Text('João Emamanuel', style: TextStyle(fontSize: 28),);
+  return Text(
+    'João Emamanuel',
+    style: TextStyle(fontSize: 28),
+  );
 }
 
 class Imagem extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -21,10 +21,10 @@ class _PagesState extends State<Pages> {
     );
   }
 }
+
 class _Pages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     final modelonavegacao = Provider.of<_NavigationButtom>(context);
 
     return PageView(
@@ -39,7 +39,6 @@ class _Pages extends StatelessWidget {
 }
 
 class _Navigation extends StatefulWidget {
-
   @override
   _NavigationState createState() => _NavigationState();
 }
@@ -47,16 +46,21 @@ class _Navigation extends StatefulWidget {
 class _NavigationState extends State<_Navigation> {
   @override
   Widget build(BuildContext context) {
-
     final modelonavegacao = Provider.of<_NavigationButtom>(context);
 
     return BottomNavigationBar(
         currentIndex: modelonavegacao.paginaAtual,
-        onTap: (pagina) =>modelonavegacao.paginaAtual = pagina,
+        onTap: (pagina) => modelonavegacao.paginaAtual = pagina,
         backgroundColor: Colors.white,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.house, size: 30),label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book_outlined, size: 30),label: 'Atividades'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.house, size: 30),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu_book_outlined, size: 30),
+            label: 'Atividades',
+          ),
           // BottomNavigationBarItem(icon: Icon(Icons.person, size: 30),label: ''),
           // BottomNavigationBarItem(icon: Icon(Icons.workspaces_outline, size: 30),label: ''),
         ]);
@@ -64,7 +68,6 @@ class _NavigationState extends State<_Navigation> {
 }
 
 class _NavigationButtom with ChangeNotifier {
-
   int _paginaAtual = 0;
   PageController _pageController = PageController();
 
@@ -72,8 +75,10 @@ class _NavigationButtom with ChangeNotifier {
 
   set paginaAtual(int value) {
     _paginaAtual = value;
-    _pageController.animateToPage(value, duration: Duration(milliseconds: 500), curve: Curves.easeOut);
+    _pageController.animateToPage(value,
+        duration: Duration(milliseconds: 500), curve: Curves.easeOut);
     notifyListeners();
   }
+
   PageController get pageController => _pageController;
 }
