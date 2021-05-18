@@ -60,6 +60,9 @@ class _NavigationState extends State<_Navigation> {
           BottomNavigationBarItem(
             icon: Icon(Icons.menu_book_outlined, size: 30),
             label: 'Atividades',
+          ),BottomNavigationBarItem(
+            icon: Icon(Icons.settings, size: 30),
+            label: 'Configuração',
           ),
           // BottomNavigationBarItem(icon: Icon(Icons.person, size: 30),label: ''),
           // BottomNavigationBarItem(icon: Icon(Icons.workspaces_outline, size: 30),label: ''),
